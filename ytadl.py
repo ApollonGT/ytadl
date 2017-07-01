@@ -84,7 +84,7 @@ with open(listfile) as f:
             vurl, comment = vurl.split("#", 1)
             vurl = vurl.strip()
         if (len(vurl) > 0 and vurl[0] != '#'):
-            cmd = 'youtube-dl -x --restrict-filenames --audio-format '+aformat+' --audio-quality '+quality+' -o "'+outdir+'%(title)s.%(ext)s" "' + vurl + '"'
+            cmd = 'youtube-dl -x --restrict-filenames --audio-format '+aformat+' --audio-quality '+quality+' -o "'+outdir+'%(title)s_%(id)s.%(ext)s" "' + vurl + '"'
             os.system(cmd)
         else:
             unread += 1
